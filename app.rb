@@ -14,7 +14,14 @@ get '/another' do
   "Another one bites the dust!"
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = %w[Amigo Oscar Viking].sample
   erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  @surname = params[:surname]
+  erb :index
 end
